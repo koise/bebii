@@ -20,14 +20,10 @@
             padding: 10px;
             box-sizing: border-box;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
         }
 
         .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
             max-width: 90%;
             width: 100%;
         }
@@ -35,12 +31,9 @@
         .photo {
             background-color: #449fbb;
             padding: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             border-radius: 10px;
-            max-width: 100%;
-            width: 400px;
+            width: 100%;
+            max-width: 400px;
         }
 
         .photoContainer {
@@ -50,35 +43,23 @@
             justify-content: center;
         }
 
-        .photoLeft, .photoRight {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
         .photo img {
             width: 100%;
-            max-width: 160px;
-            height: auto;
+            max-width: 140px;
             border-radius: 4px;
         }
 
         .photoMessage {
             margin-top: 10px;
             background-color: #8AE1FC;
-            width: 100%;
             border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 10px;
             cursor: pointer;
         }
 
         .photoMessage h1 {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 18px;
             margin: 0;
-            padding: 10px;
             font-weight: 500;
         }
 
@@ -90,39 +71,26 @@
             max-width: 420px;
         }
 
-        .container h1 {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-weight: 500;
-            font-size: 22px;
-        }
-
-        .modal {
-        display: none;
-        position: fixed;
-        padding: 20px;
-        background-color: #96C5F7;
-        width: 90%;
-        max-width: 300px;
-        border-radius: 8px;
-        text-align: center;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        }
-
-        /* Background overlay */
-        .modal-overlay {
+        .modal, .modal-overlay {
             display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            justify-content: center;
+            align-items: center;
             background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
         }
 
-        /* Close button */
+        .modal {
+            background-color: #96C5F7;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 300px;
+        }
+
         .closeModal {
             background: none;
             border: none;
@@ -140,37 +108,23 @@
         }
 
         .message {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            text-align: center;
-            font-size: 18px;  
+            font-size: 16px;
             padding: 12px;
             line-height: 1.5;
         }
 
-
-        /* Responsive Design */
         @media screen and (max-width: 600px) {
-            .message p{
-                font-size: 18px;  
-                padding: 10px;
-                line-height: 1.4;
+            .photo img {
+                max-width: 100px;
             }
 
-            .messageHeader {
-                font-size: 14px;
-                font-weight: bold;
-            }
-            
-
-            .message {
-                font-size: 14px;
-                padding: 8px;
+            .photoMessage h1 {
+                font-size: 16px;
             }
 
-            .messageHeader {
-                font-size: 14px;
+            .modal {
+                width: 80%;
+                max-width: 280px;
             }
         }
     </style>
@@ -181,16 +135,12 @@
         <div class="white">
             <div class="photo">
                 <div class="photoContainer">
-                    <div class="photoLeft">
-                        <img src="images/photo1.png" alt="Photo 1">
-                        <img src="images/photo2.png" alt="Photo 2">
-                        <img src="images/photo3.png" alt="Photo 3">
-                    </div>
-                    <div class="photoRight">
-                        <img src="images/photo4.png" alt="Photo 4">
-                        <img src="images/photo5.png" alt="Photo 5">
-                        <img src="images/photo6.png" alt="Photo 6">
-                    </div>
+                    <img src="images/photo1.png" alt="Photo 1">
+                    <img src="images/photo2.png" alt="Photo 2">
+                    <img src="images/photo3.png" alt="Photo 3">
+                    <img src="images/photo4.png" alt="Photo 4">
+                    <img src="images/photo5.png" alt="Photo 5">
+                    <img src="images/photo6.png" alt="Photo 6">
                 </div>
                 <div class="photoMessage" onclick="playAudio()">
                     <h1 id="messageText">Click here!</h1>
@@ -200,17 +150,12 @@
         </div>
     </div>
 
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
     <div class="modal" id="myModal">
         <div class="modalMessage">
-            <div class="messageHeader">
-                <button class = "closeModal" onclick="closeModal()">✖</button>
-            </div>
+            <button class="closeModal" onclick="closeModal()">✖</button>
             <div class="message">
-                <p>            Happy Valentines Bebi, I just want to say you we're the soft pause in this song.
-                    I love how we made love do to some infeffable things, that we're focusing individually
-                    and Thank you for making time always! Let the Valentine's day express my message how I admire you
-                    that you are a wonderful and amazing person. Thank you for experiencing this kind of care 
-                    in exchange I would give you the warmest embrance by coming in my life. Just Keep Smiling and keep your self safe. Love lots bebi, Hugs hugs! See you soonest Bebi</p>
+                <p>Happy Valentine's Bebi! You are the soft pause in this song. I love how we cherish each moment, even as we grow individually. Thank you for always making time. Let this day express my admiration for the wonderful person you are. Keep smiling and stay safe. Love lots, Bebi! Hugs hugs! See you soonest! ❤️</p>
             </div>
         </div>
     </div>
@@ -223,7 +168,7 @@
             if (audio.paused) {
                 audio.play();
                 message.innerText = "Happy Valentine's, Bebi! ❤️";
-                document.getElementById("myModal").style.display = "block";
+                document.getElementById("myModal").style.display = "flex";
                 document.getElementById("modalOverlay").style.display = "block";
             } else {
                 audio.pause();
@@ -232,9 +177,9 @@
         }
 
         function closeModal() {
-        document.getElementById("myModal").style.display = "none";
-        document.getElementById("modalOverlay").style.display = "none";
-    }
+            document.getElementById("myModal").style.display = "none";
+            document.getElementById("modalOverlay").style.display = "none";
+        }
     </script>
 </body>
 </html>
